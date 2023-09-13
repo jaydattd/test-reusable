@@ -20,6 +20,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        uses: jaydattd/string-operations-action@1.1
+        with:
+          string_to_process: 'Test'
+          
 
       
