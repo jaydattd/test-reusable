@@ -12,6 +12,13 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      string_to_process:
+        required: true
+        default: 'Test'
+      function_name:
+        required: true
+        default: 'toUpperCase()'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,12 +29,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Run a one-line script
+      - name: Call string conversion
         id: convert-string
         uses: jaydattd/string-operations-action@main
         with:
-          string_to_process: 'Test'
-          function_name: 'toLowerCase()'
+          string_to_process: ${{ inputs.string_to_process }}
+          function_name: ${{ inputs.function_name }}
 
       - name: Get the output conversion
         run: echo "Converted string is ${{ steps.convert-string.outputs.result }}"
