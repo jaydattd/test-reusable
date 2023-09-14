@@ -30,4 +30,4 @@ jobs:
           function_name: 'toLowerCase()'
 
       - name: Get the output conversion
-        run: echo "Converted string is ${{ steps.convert-string.outputs.toUperCase }}"
+        run: echo "Converted string is ${{ steps.convert-string.outputs.result }}"
