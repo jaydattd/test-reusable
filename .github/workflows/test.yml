@@ -27,6 +27,7 @@ jobs:
         uses: jaydattd/string-operations-action@main
         with:
           string_to_process: 'Test'
+          function_name: 'toLowerCase()'
 
       - name: Get the output conversion
         run: echo "Converted string is ${{ steps.convert-string.outputs.toUperCase }}"
