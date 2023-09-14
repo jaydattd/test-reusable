@@ -29,4 +29,4 @@ jobs:
           string_to_process: 'Test'
 
       - name: Get the output conversion
-        run: echo "Converted string is ${{ steps.convert-string.outputs.toLowerCase }}"
+        run: echo "Converted string is ${{ steps.convert-string.outputs.toUperCase }}"
